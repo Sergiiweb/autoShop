@@ -27,8 +27,8 @@ router.post(
 
 router.get(
   "/car-cards-moderation",
-  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   authMiddleware.checkAccessToken,
+  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   commonMiddleware.isQueryValid(5, "createdAt"),
   carController.getAllInactiveCars,
 );
