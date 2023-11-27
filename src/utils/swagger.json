@@ -1,0 +1,371 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "SWAGGER FOR API CarSalesSite",
+    "version": "1.0.0",
+    "title": "CarSalesSite>",
+    "contact": {
+      "email": "sergii@gmail.com"
+    }
+  },
+  "paths": {
+    "/register": {
+      "post": {
+        "tags": ["auth"],
+        "description": "register user",
+        "summary": "register user",
+        "responses": {
+          "200": {
+            "description": "REGISTER USER"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["auth"],
+        "description": "login user",
+        "summary": "login user",
+        "responses": {
+          "200": {
+            "description": "LOGIN USER"
+          }
+        }
+      }
+    },
+    "/activate": {
+      "post": {
+        "tags": ["auth"],
+        "description": "activate user",
+        "summary": "activate user",
+        "responses": {
+          "200": {
+            "description": "ACTIVATE USER"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": ["auth"],
+        "description": "logout user",
+        "summary": "logout user",
+        "responses": {
+          "200": {
+            "description": "LOGOUT USER"
+          }
+        }
+      }
+    },
+    "/logout-all": {
+      "post": {
+        "tags": ["auth"],
+        "description": "logout user from all devices",
+        "summary": "logout user from all devices",
+        "responses": {
+          "200": {
+            "description": "LOGOUT USER FROM ALL DEVICES"
+          }
+        }
+      }
+    },
+    "/refresh": {
+      "post": {
+        "tags": ["auth"],
+        "description": "refresh user token",
+        "summary": "refresh user token",
+        "responses": {
+          "200": {
+            "description": "GET NEW USER TOKENS"
+          }
+        }
+      },
+      "put": {
+        "tags": ["auth"],
+        "description": "refresh user token",
+        "summary": "refresh user token",
+        "responses": {
+          "200": {
+            "description": "GET NEW USER TOKENS"
+          }
+        }
+      }
+    },
+    "/forgot": {
+      "post": {
+        "tags": ["auth"],
+        "description": "request for restore user user password",
+        "summary": "request for restore user user password",
+        "responses": {
+          "200": {
+            "description": "RESTORE USER PASSWORD"
+          }
+        }
+      }
+    },
+    "/forgot/:token": {
+      "put": {
+        "tags": ["auth"],
+        "description": "restore user user password",
+        "summary": "restore user user password",
+        "responses": {
+          "200": {
+            "description": "RESTORE USER PASSWORD"
+          }
+        }
+      }
+    },
+    "/password": {
+      "post": {
+        "tags": ["auth"],
+        "description": "restore user user password",
+        "summary": "restore user user password",
+        "responses": {
+          "200": {
+            "description": "RESTORE USER PASSWORD"
+          }
+        }
+      }
+    },
+    "/administrator": {
+      "post": {
+        "tags": ["auth"],
+        "description": "register admin account",
+        "summary": "register admin account",
+        "responses": {
+          "200": {
+            "description": "REGISTER ADMIN ACCOUNT"
+          }
+        }
+      }
+    },
+    "/administrator/set-manager/:userId": {
+      "post": {
+        "tags": ["auth"],
+        "description": "set manager",
+        "summary": "set manager",
+        "responses": {
+          "200": {
+            "description": "SET MANAGER ACCOUNT"
+          }
+        }
+      }
+    },
+    "/buy-premium-account/:userId": {
+      "post": {
+        "tags": ["auth"],
+        "description": "set premium account",
+        "summary": "set premium account",
+        "responses": {
+          "200": {
+            "description": "SET PREMIUM ACCOUNT"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["users"],
+        "description": "get all users for admin and managers",
+        "summary": "get all users summary",
+        "responses": {
+          "200": {
+            "description": "RETURNED ALL USERS"
+          }
+        }
+      },
+      "post": {
+        "tags": ["users"],
+        "description": "create user",
+        "summary": "create user profile",
+        "responses": {
+          "200": {
+            "description": "RETURNED CREATED USER"
+          }
+        }
+      }
+    },
+    "/users/me": {
+      "get": {
+        "tags": ["users"],
+        "description": "get all info about user",
+        "summary": "get all user info summary",
+        "responses": {
+          "200": {
+            "description": "RETURNED ALL INFO ABOUT USER",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/users/:userId": {
+      "get": {
+        "tags": ["users"],
+        "description": "get user by id",
+        "summary": "get user by id",
+        "responses": {
+          "200": {
+            "description": "RETURNED USER"
+          }
+        }
+      },
+      "put": {
+        "tags": ["users"],
+        "description": "update user",
+        "summary": "update user profile",
+        "responses": {
+          "200": {
+            "description": "UPDATE USER"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["users"],
+        "description": "delete user",
+        "summary": "delete user profile",
+        "responses": {
+          "200": {
+            "description": "DELETE USER"
+          }
+        }
+      }
+    },
+    "/users/:userId/avatar": {
+      "post": {
+        "tags": ["users"],
+        "description": "upload user avatar",
+        "summary": "upload user avatar",
+        "responses": {
+          "200": {
+            "description": "UPLOAD USER AVATAR"
+          }
+        }
+      }
+    },
+    "/cars": {
+      "get": {
+        "tags": ["cars"],
+        "description": "get all cars",
+        "summary": "get all cars summary",
+        "responses": {
+          "200": {
+            "description": "RETURNED ALL CARS"
+          }
+        }
+      },
+      "post": {
+        "tags": ["cars"],
+        "description": "create car",
+        "summary": "create car card",
+        "responses": {
+          "200": {
+            "description": "RETURNED CREATED CAR"
+          }
+        }
+      }
+    },
+    "/car-cards-moderation": {
+      "get": {
+        "tags": ["cars"],
+        "description": "get all cars that need moderation",
+        "summary": "get all cars that need moderation",
+        "responses": {
+          "200": {
+            "description": "RETURNED ALL CARS FOR MODERATION"
+          }
+        }
+      }
+    },
+    "/cars/:carId": {
+      "get": {
+        "tags": ["cars"],
+        "description": "get car by id",
+        "summary": "get car by id",
+        "responses": {
+          "200": {
+            "description": "RETURNED CAR"
+          }
+        }
+      },
+      "put": {
+        "tags": ["cars"],
+        "description": "update car by id",
+        "summary": "update car by id",
+        "responses": {
+          "200": {
+            "description": "UPDATE CAR"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["cars"],
+        "description": "delete car by id",
+        "summary": "delete car by id",
+        "responses": {
+          "200": {
+            "description": "DELETE CAR"
+          }
+        }
+      }
+    },
+    "/cars/:carId/photo": {
+      "post": {
+        "tags": ["cars"],
+        "description": "post car photo",
+        "summary": "post car photo",
+        "responses": {
+          "200": {
+            "description": "POST CAR PHOTO"
+          }
+        }
+      }
+    },
+    "/cars/:carId/statistics": {
+      "post": {
+        "tags": ["cars"],
+        "description": "get car card statistics",
+        "summary": "get car card statistics",
+        "responses": {
+          "200": {
+            "description": "GET CAR CARD STATISTIC"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "account_type": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "genders": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

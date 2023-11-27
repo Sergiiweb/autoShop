@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "5d677c05-a3a4-4860-8ac7-c2e3f7c406f9",
+		"name": "cars5001",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28780716"
+	},
+	"item": [
+		{
+			"name": "cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_HOST}}/cars?page=1&limit=20",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create car",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"Corolla\",\r\n    \"year\": 2015,\r\n    \"brand\": \"Toyota\",\r\n    \"region\": \"kyiv\",\r\n    \"price\": 15000,\r\n    \"currency\": \"UAH\",\r\n    \"description\": \"Super puper Car Super puper Car Super puper Car\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/cars",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "car by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_HOST}}/cars/6551c94236802e0c3291c90d",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"6551c94236802e0c3291c90d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statistics by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/cars/65528daffc3a4472c4d10e1a/statistics",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"65528daffc3a4472c4d10e1a",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upd car by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"S-type\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/cars/652fade30e0fcdd3a7b68ccc",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"652fade30e0fcdd3a7b68ccc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "car by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/cars/654f6eb1940569665a6b92a2",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"654f6eb1940569665a6b92a2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/jada 253203017.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_HOST}}/cars/65528daffc3a4472c4d10e1a/photo",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"65528daffc3a4472c4d10e1a",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inactive Car Cards Moderation (admin/manager)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/cars/car-cards-moderation?page=1&limit=20",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"cars",
+						"car-cards-moderation"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

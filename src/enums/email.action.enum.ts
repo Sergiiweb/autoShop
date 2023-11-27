@@ -1,0 +1,6 @@
+export enum EEmailAction {
+  REGISTER,
+  FORGOT_PASSWORD,
+  OLD_VISIT,
+  MODERATE_CAR_CARD,
+}

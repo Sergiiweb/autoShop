@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "42364f97-5419-4d21-b772-d3af22d60e7b",
+		"name": "auth5001",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28780716"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"seller\",\r\n    \"email\": \"seller@gmail.com\",\r\n    \"age\": 35,\r\n    \"genders\": \"male\",\r\n    \"password\":\"qwerty123!\",\r\n    \"phone\": \"+380526677779\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/register",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"age\": 35,\r\n    \"genders\": \"male\",\r\n    \"password\":\"qwerty123!\",\r\n    \"phone\": \"+380917777777\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/administrator",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"administrator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin setManager",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/administrator/set-manager/6550f8414d1adab616a74250",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"administrator",
+						"set-manager",
+						"6550f8414d1adab616a74250"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin manager setPremiumAccount",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/buy-premium-account/654fe7449f25cab205be5935",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"buy-premium-account",
+						"654fe7449f25cab205be5935"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/activate?actionToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTI2NjViMWRlNDU4ODRhMzMyN2FkNjgiLCJuYW1lIjoiU2VyZ2lpIiwiaWF0IjoxNjk3MDE1MjE4LCJleHAiOjE2OTcxMDE2MTh9.yyR2_P6zM1YVgneT-O-i6XoDXivVto5eZYxz28Il7eQ",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"activate"
+					],
+					"query": [
+						{
+							"key": "actionToken",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTI2NjViMWRlNDU4ODRhMzMyN2FkNjgiLCJuYW1lIjoiU2VyZ2lpIiwiaWF0IjoxNjk3MDE1MjE4LCJleHAiOjE2OTcxMDE2MTh9.yyR2_P6zM1YVgneT-O-i6XoDXivVto5eZYxz28Il7eQ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resend activate token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/activate",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.environment.set(\"accessToken\", body.accessToken);\r",
+							"pm.environment.set(\"refreshToken\", body.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"seller@gmail.com\",\r\n    \"password\":\"qwerty123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/login",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.environment.set(\"accessToken\", body.accessToken);\r",
+							"pm.environment.set(\"refreshToken\", body.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\":\"qwerty123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/login",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.environment.set(\"accessToken\", body.accessToken);\r",
+							"pm.environment.set(\"refreshToken\", body.refreshToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{refreshToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lololoshka@example.com\",\r\n    \"password\":\"lol123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/refresh",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"accessToken\", \"\");\r",
+							"pm.environment.set(\"refreshToken\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lololoshka@example.com\",\r\n    \"password\":\"lol123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/logout",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logoutAll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"accessToken\", \"\");\r",
+							"pm.environment.set(\"refreshToken\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lololoshka@example.com\",\r\n    \"password\":\"lol123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/logout-all",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"logout-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"accessToken\", \"\");\r",
+							"pm.environment.set(\"refreshToken\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sergii.web@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/forgot",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"accessToken\", \"\");\r",
+							"pm.environment.set(\"refreshToken\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newPassword\": \"qwerty123!!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/forgot/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTI2NjViMWRlNDU4ODRhMzMyN2FkNjgiLCJpYXQiOjE2OTcxMDM4OTYsImV4cCI6MTY5NzE5MDI5Nn0.2gIoCx3VC2Ka-wktZBOsaf4zSPzdkaIrGD0QujZN3GM",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"forgot",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTI2NjViMWRlNDU4ODRhMzMyN2FkNjgiLCJpYXQiOjE2OTcxMDM4OTYsImV4cCI6MTY5NzE5MDI5Nn0.2gIoCx3VC2Ka-wktZBOsaf4zSPzdkaIrGD0QujZN3GM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set new password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"accessToken\", \"\");\r",
+							"pm.environment.set(\"refreshToken\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newPassword\": \"qwerty123!\",\r\n    \"password\":\"qwerty123!!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/auth/password",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"auth",
+						"password"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

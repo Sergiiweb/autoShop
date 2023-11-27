@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "13e1dbaf-b062-421a-a980-0b8621fac336",
+		"name": "users5001",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28780716"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/users?page=1&limit=20",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users with Pagination & Sort",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/users?page=1&limit=5&sortedBy=age&age[gte]=30",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "sortedBy",
+							"value": "age"
+						},
+						{
+							"key": "age[gte]",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alesha\",\r\n    \"email\": \"oleksii@example.com\",\r\n    \"age\": 35,\r\n    \"gender\": \"female\",\r\n    \"password\":\"22555522\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/users",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/users/654fe442a4504767609fca09",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users",
+						"654fe442a4504767609fca09"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/users/me",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avatar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/User/Desktop/avatar.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{API_HOST}}/users/654fe7449f25cab205be5935/avatar",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users",
+						"654fe7449f25cab205be5935",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upd user by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kokos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/users/654f6649d1b93b7ef239ea4a",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users",
+						"654f6649d1b93b7ef239ea4a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_HOST}}/users/65266439de45884a3327ad4c",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"users",
+						"65266439de45884a3327ad4c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
