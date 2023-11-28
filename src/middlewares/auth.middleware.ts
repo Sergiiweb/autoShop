@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { ApiError } from "../errors/api.error";
 import { tokenRepository } from "../repositories/token.repository";
 import { tokenService } from "../services/token.service";
+import { ITokenPayload } from "../types";
 
 class AuthMiddleware {
   public async checkAccessToken(
@@ -62,12 +63,7 @@ class AuthMiddleware {
   public checkRole(roles: string[]) {
     return async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const accessToken = req.get("Authorization");
-        if (!accessToken) {
-          throw new ApiError("No Token", 401);
-        }
-
-        const payload = tokenService.checkToken(accessToken, "access");
+        const payload = req.res.locals.tokenPayload as ITokenPayload;
 
         if (!roles.includes(payload.role)) {
           throw new ApiError("Access denied", 403);
@@ -83,12 +79,7 @@ class AuthMiddleware {
   public checkAccountType(type: string) {
     return async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const accessToken = req.get("Authorization");
-        if (!accessToken) {
-          throw new ApiError("No Token", 401);
-        }
-
-        const { accountType } = tokenService.checkToken(accessToken, "access");
+        const { accountType } = req.res.locals.tokenPayload as ITokenPayload;
 
         if (accountType !== type) {
           throw new ApiError("Access denied", 403);

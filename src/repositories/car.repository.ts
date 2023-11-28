@@ -101,12 +101,8 @@ class CarRepository {
     await Statistics.updateOne({ _carId: carId }, dto);
   }
 
-  // public async addView(carId: string, dto: IStatistics): Promise<void> {
-  //   await Statistics.updateOne({ _carId: carId }, dto);
-  // }
-
   public async calculateAvgPrice(carId: string): Promise<Partial<IStatistics>> {
-    const car = await Car.findOne({ _id: carId });
+    const car: ICar = await Car.findOne({ _id: carId });
 
     const avgModelPriceByRegion = await Car.aggregate([
       {
@@ -115,7 +111,7 @@ class CarRepository {
       {
         $group: {
           _id: null,
-          averagePrice: { $avg: "$price" },
+          averagePrice: { $avg: "$priceUAH" },
         },
       },
     ]);
@@ -127,7 +123,7 @@ class CarRepository {
       {
         $group: {
           _id: null,
-          averagePrice: { $avg: "$price" },
+          averagePrice: { $avg: "$priceUAH" },
         },
       },
     ]);
@@ -149,25 +145,6 @@ class CarRepository {
   public async updateViews(carId: string, dto: IViews): Promise<void> {
     await Views.updateOne({ _carId: carId }, dto);
   }
-
-  // public async countViewsByCarId(carId: string): Promise<number> {
-  //   const result = await Views.aggregate([
-  //     {
-  //       $match: { _carId: carId },
-  //     },
-  //     {
-  //       $project: {
-  //         viewsCount: { $size: "$views" },
-  //       },
-  //     },
-  //   ]);
-  //
-  //   if (result.length > 0) {
-  //     return result[0].viewsCount;
-  //   }
-  //
-  //   return 0;
-  // }
 }
 
 export const carRepository = new CarRepository();

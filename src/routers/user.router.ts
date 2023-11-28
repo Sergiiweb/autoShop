@@ -14,6 +14,7 @@ const router = Router();
 
 router.get(
   "/",
+  authMiddleware.checkAccessToken,
   authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   commonMiddleware.isQueryValid(5, "createdAt"),
   userController.getAll,
@@ -23,8 +24,8 @@ router.get("/me", authMiddleware.checkAccessToken, userController.getMe);
 
 router.get(
   "/:userId",
-  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   authMiddleware.checkAccessToken,
+  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   commonMiddleware.isIdValid("userId"),
   userMiddleware.getByIdOrThrow,
   userController.getById,
@@ -38,8 +39,8 @@ router.put(
 );
 router.delete(
   "/:userId",
-  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   authMiddleware.checkAccessToken,
+  authMiddleware.checkRole([EUserRoles.Administrator, EUserRoles.Manager]),
   commonMiddleware.isIdValid("userId"),
   userController.deleteUser,
 );

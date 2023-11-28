@@ -46,7 +46,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"model\": \"Corolla\",\r\n    \"year\": 2015,\r\n    \"brand\": \"Toyota\",\r\n    \"region\": \"kyiv\",\r\n    \"price\": 15000,\r\n    \"currency\": \"UAH\",\r\n    \"description\": \"Super puper Car Super puper Car Super puper Car\"\r\n}",
+					"raw": "{\r\n    \"model\": \"Corolla\",\r\n    \"year\": 2023,\r\n    \"brand\": \"Toyota\",\r\n    \"region\": \"kyiv\",\r\n    \"price\": 450000,\r\n    \"currency\": \"UAH\",\r\n    \"description\": \"Super puper Car Super puper Car Super puper Car\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,13 +71,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{API_HOST}}/cars/6551c94236802e0c3291c90d",
+					"raw": "{{API_HOST}}/cars/65648821cb7ab8a6ca237e8b",
 					"host": [
 						"{{API_HOST}}"
 					],
 					"path": [
 						"cars",
-						"6551c94236802e0c3291c90d"
+						"65648821cb7ab8a6ca237e8b"
 					]
 				}
 			},
@@ -95,13 +95,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{API_HOST}}/cars/65528daffc3a4472c4d10e1a/statistics",
+					"raw": "{{API_HOST}}/cars/65648821cb7ab8a6ca237e8b/statistics",
 					"host": [
 						"{{API_HOST}}"
 					],
 					"path": [
 						"cars",
-						"65528daffc3a4472c4d10e1a",
+						"65648821cb7ab8a6ca237e8b",
 						"statistics"
 					]
 				}
@@ -187,13 +187,13 @@
 					]
 				},
 				"url": {
-					"raw": "{{API_HOST}}/cars/65528daffc3a4472c4d10e1a/photo",
+					"raw": "{{API_HOST}}/cars/65648821cb7ab8a6ca237e8b/photo",
 					"host": [
 						"{{API_HOST}}"
 					],
 					"path": [
 						"cars",
-						"65528daffc3a4472c4d10e1a",
+						"65648821cb7ab8a6ca237e8b",
 						"photo"
 					]
 				}

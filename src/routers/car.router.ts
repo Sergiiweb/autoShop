@@ -64,9 +64,9 @@ router.post(
 
 router.get(
   "/:carId/statistics",
-  authMiddleware.checkAccountType(EUserAccountType.Premium),
   commonMiddleware.isIdValid("carId"),
   authMiddleware.checkAccessToken,
+  authMiddleware.checkAccountType(EUserAccountType.Premium),
   carController.getStatistics,
 );
 
